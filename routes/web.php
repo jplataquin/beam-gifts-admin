@@ -36,6 +36,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/brand/display/{id}', [App\Http\Controllers\BrandController::class, 'display']);
     Route::post('/brand/display/{id}', [App\Http\Controllers\BrandController::class, '_edit']);
     Route::get('/brands', [App\Http\Controllers\BrandController::class, 'list']);
+
+    Route::get('/partner/create',[App\Http\Controllers\ItemController::class,'create']);
+    Route::post('/partner/create',[App\Http\Controllers\ItemController::class,'_create']);
 });
 
 
