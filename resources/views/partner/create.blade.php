@@ -24,9 +24,10 @@
         </div>
     </div>
 
+    <h3>Primary</h3>
     <div class="row">
         <div class="col form-group">
-            <label>Primary Contact No.</label>
+            <label>Contact No.</label>
             <input type="number" id="primary_contact_no" class="form-control"/>
         </div>
     </div>
@@ -38,33 +39,34 @@
     </div>
     <div class="row">
         <div class="col form-group">
-            <label>Primary Contact Person Position</label>
+            <label>Contact Person Position</label>
             <input type="text" id="primary_contact_person_position" class="form-control"/>
         </div>
     </div>
     
+    <h3>Secondary</h3>
     <div class="row">
         <div class="col form-group">
-            <label>Secondary Contact No.</label>
+            <label>Contact No.</label>
             <input type="number" id="secondary_contact_no" class="form-control"/>
         </div>
     </div>
     <div class="row">
         <div class="col form-group">
-            <label>Secondary Contact Person</label>
+            <label>Contact Person</label>
             <input type="number" id="secondary_contact_person" class="form-control"/>
         </div>
     </div>
     <div class="row">
         <div class="col form-group">
-            <label>Secondary Contact Person Position</label>
+            <label>Contact Person Position</label>
             <input type="text" id="secondary_contact_person_position" class="form-control"/>
         </div>
     </div>
 
     <div class="row">
         <div class="col text-end">
-            <button id="submitBtn">Submit</button>
+            <button class="btn btn-primary" id="submitBtn">Submit</button>
         </div>
     </div>
 </div>
