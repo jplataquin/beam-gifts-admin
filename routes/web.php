@@ -37,8 +37,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/brand/display/{id}', [App\Http\Controllers\BrandController::class, '_edit']);
     Route::get('/brands', [App\Http\Controllers\BrandController::class, 'list']);
 
-    Route::get('/partner/create',[App\Http\Controllers\ItemController::class,'create']);
-    Route::post('/partner/create',[App\Http\Controllers\ItemController::class,'_create']);
+    Route::get('/partner/create',[App\Http\Controllers\PartnerController::class,'create']);
+    Route::post('/partner/create',[App\Http\Controllers\PartnerController::class,'_create']);
 });
 
 
