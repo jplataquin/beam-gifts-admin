@@ -64,10 +64,52 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col text-end">
+            <button class="btn btn-primary" id="cancelBtn">Submit</button>
             <button class="btn btn-primary" id="submitBtn">Submit</button>
         </div>
     </div>
 </div>
+<script type="module">
+
+    const submitBtn = document.querySelector('#submitBtn');
+    const cancelBtn = document.querySelector('#cancelBtn');
+
+    const brand     = document.querySelector('#brand');
+    const email     = document.querySelector('#email');
+    const branch    = document.querySelector('#branch');
+   
+    const primary_contact_person            = document.querySelector('#primary_contact_person');
+    const primary_contact_no                = document.querySelector('#primary_contact_no');
+    const primary_contact_person_position   = document.querySelector('#primary_contact_person_position');
+   
+    const secondary_contact_person          = document.querySelector('#secondary_contact_person');
+    const secondary_contact_no              = document.querySelector('#secondary_contact_no');
+    const secondary_contact_person_position = document.querySelector('#secondary_contact_person_position');
+
+    submitBtn.onclick = (e)=>{
+        e.preventDefault();
+
+        const formData = new FormData();
+
+        //Todo client side validation
+
+        formData.append('brand',brand.value);
+        formData.append('email',email.value);
+        formData.append('branch',branch.value);
+
+        formData.append('primary_contact_no',primary_contact_no.value);
+        formData.append('primary_contact_person',primary_contact_person.value);
+        formData.append('primary_contact_person_position',primary_contact_person_position.value);
+
+        formData.append('secondary_contact_no',secondary_contact_no.value);
+        formData.append('secondary_contact_person',secondary_contact_person.value);
+        formData.append('secondary_contact_person_position',secondary_contact_person_position.value);
+
+        window.$post('',formData).then(reply=>{
+            console.log(reply);
+        });
+    }
+</script>
 @endsection
