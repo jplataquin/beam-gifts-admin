@@ -72,7 +72,7 @@
     <div class="row">
         <div class="col form-group">
             <label>Contact Person</label>
-            <input type="number" id="secondary_contact_person" class="form-control"/>
+            <input type="text" id="secondary_contact_person" class="form-control"/>
         </div>
     </div>
     <div class="row mb-3">
@@ -130,7 +130,13 @@
         formData.append('secondary_contact_person_position',secondary_contact_person_position.value);
 
         window.util.$post('',formData).then(reply=>{
-            console.log(reply);
+            
+            if(!reply.status){
+                alert(reply.message);
+                return false;
+            }
+
+            document.location.href = '/partner/'+reply.data.id;
         });
     }
 </script>
