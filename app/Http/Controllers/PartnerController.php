@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Partner;
+use Illuminate\Support\Facades\Auth;
 
 class PartnerController extends Controller
 {
@@ -46,7 +47,8 @@ class PartnerController extends Controller
         $partner->secondary_contact_no                = $secondary_contact_no;
         $partner->secondary_contact_person_position   = $secondary_contact_person_position;
 
-        $partner->name = $username;
+        $partner->name          = $username;
+        $partner->created_by    = Auth::id();
 
         $partner->save();
 
