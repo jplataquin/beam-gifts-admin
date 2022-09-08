@@ -23,6 +23,14 @@ class Partner extends Authenticatable
         'name',
         'email',
         'password',
+        'brand_id',
+        'branch',
+        'primary_contact_person',
+        'primary_contact_no',
+        'primary_contact_person_position',
+        'secondary_contact_person',
+        'secondary_contact_no',
+        'secondary_contact_person_position'
     ];
 
     /**

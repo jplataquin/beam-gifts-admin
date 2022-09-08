@@ -51,14 +51,14 @@ window.util.$get = async (url,data) => {
     });
 }
 
-window.util.$post = async (url,formData) => {
+window.util.$post = async (url,formData,headers) => {
 
+    headers                 = headers ?? {};
+    headers['X-CSRF-Token'] =  document.querySelector('meta[name="csrf-token"]').content
+    
     return fetch(url,
     {
-        headers: {
-            "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content,
-            "Accept": "application/json"
-        },
+        headers: headers,
         body: formData  ?? {},
         method: "POST"
     }).then((response) => {

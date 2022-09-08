@@ -24,6 +24,13 @@
         </div>
     </div>
 
+    <div class="row mb-3">
+        <div class="col form-group">
+            <label>Username</label>
+            <input type="text" id="username" class="form-control"/>
+        </div>
+    </div>
+
     <h3>Primary</h3>
     <div class="row">
         <div class="col form-group">
@@ -79,7 +86,8 @@
     const brand     = document.querySelector('#brand');
     const email     = document.querySelector('#email');
     const branch    = document.querySelector('#branch');
-   
+    const usename   = document.querySelector('#usenrame');
+
     const primary_contact_person            = document.querySelector('#primary_contact_person');
     const primary_contact_no                = document.querySelector('#primary_contact_no');
     const primary_contact_person_position   = document.querySelector('#primary_contact_person_position');
