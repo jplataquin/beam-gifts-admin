@@ -97,7 +97,7 @@
     const brand     = document.querySelector('#brand');
     const email     = document.querySelector('#email');
     const branch    = document.querySelector('#branch');
-    const usename   = document.querySelector('#usenrame');
+    const username  = document.querySelector('#username');
     const status    = document.querySelector('#status');
 
     const primary_contact_person            = document.querySelector('#primary_contact_person');
@@ -119,6 +119,7 @@
         formData.append('email',email.value);
         formData.append('branch',branch.value);
         formData.append('status',status.value);
+        formData.append('username',username.value);
 
         formData.append('primary_contact_no',primary_contact_no.value);
         formData.append('primary_contact_person',primary_contact_person.value);
