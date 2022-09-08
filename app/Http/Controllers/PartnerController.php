@@ -20,6 +20,7 @@ class PartnerController extends Controller
         $branch         = $request->input('branch');
         $email          = $request->input('email');
         $uername        = $request->input('username');
+        $status         = $request->input('status');
 
         $primary_contact_person             = $request->input('primary_contact_person');
         $primary_contact_no                 = $request->input('primary_contact_no');
@@ -34,6 +35,7 @@ class PartnerController extends Controller
         $partner->password  = Hash::make('12345678');
         $partner->email     = $email;
         $partner->brand_id  = $brand_id;
+        $partner->status    = ''
 
         $partner->primary_contact_person            = $primary_contact_person;
         $partner->primary_contact_no                = $primary_contact_no;
