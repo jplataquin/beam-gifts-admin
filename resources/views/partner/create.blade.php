@@ -34,7 +34,7 @@
     <div class="row mb-3">
         <div class="col form-group">
             <label>Status</label>
-            <select id="username" class="form-control">
+            <select id="status" class="form-control">
                 <option value="PEND">Pending</option>
                 <option value="ACTV">Active</option>
                 <option value="SUSP">Suspended</option>
