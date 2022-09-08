@@ -46,7 +46,7 @@
     <div class="row">
         <div class="col form-group">
             <label>Contact No.</label>
-            <input type="number" id="primary_contact_no" class="form-control"/>
+            <input type="text" id="primary_contact_no" class="form-control"/>
         </div>
     </div>
     <div class="row">
@@ -66,7 +66,7 @@
     <div class="row">
         <div class="col form-group">
             <label>Contact No.</label>
-            <input type="number" id="secondary_contact_no" class="form-control"/>
+            <input type="text" id="secondary_contact_no" class="form-control"/>
         </div>
     </div>
     <div class="row">
