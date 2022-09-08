@@ -35,7 +35,7 @@ class PartnerController extends Controller
         $partner->password  = Hash::make('12345678');
         $partner->email     = $email;
         $partner->brand_id  = $brand_id;
-        $partner->status    = ''
+        $partner->status    = '';
 
         $partner->primary_contact_person            = $primary_contact_person;
         $partner->primary_contact_no                = $primary_contact_no;
