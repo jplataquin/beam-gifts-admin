@@ -10,8 +10,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Partner extends Authenticatable
 {
-    protected $connection = 'partner_db';
-    
+    protected $connection   = 'partner_db';
+    protected $table        = 'users';
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -25,6 +26,7 @@ class Partner extends Authenticatable
         'password',
         'brand_id',
         'branch',
+        'status',
         'primary_contact_person',
         'primary_contact_no',
         'primary_contact_person_position',
