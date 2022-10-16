@@ -149,7 +149,7 @@ class BrandController extends Controller
             }
         }
 
-        $dbanner = $photo['banner'] ?? '';
+        $dbanner = $photos['banner'] ?? '';
         $d1      = $photos['400px'] ?? '';
         $d2      = $photos['300px'] ?? '';
         $d3      = $photos['200px'] ?? '';
