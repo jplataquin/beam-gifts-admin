@@ -120,6 +120,8 @@
             formData.append('branches',JSON.stringify(branches));
        
 
+            let b1 = await util.imgToBlob(bannerPreview);
+
             let p1 = await util.imgToBlob(preview1);
 
             let p2 = await util.imgToBlob(preview2);
@@ -128,6 +130,7 @@
 
             let p4 = await util.imgToBlob(preview4);
 
+            formData.append('banner',b1);
             formData.append('400px',p1);
             formData.append('300px',p2);
             formData.append('200px',p3);

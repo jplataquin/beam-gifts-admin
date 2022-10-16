@@ -20,6 +20,7 @@ class BrandController extends Controller
         $description = $request->input('description');
         $branches    = $request->input('branches');
 
+        $b1 = $request->file('banner')->store('public/photos/brand/banner');
         $p1 = $request->file('400px')->store('public/photos/brand/400px');
         $p2 = $request->file('300px')->store('public/photos/brand/300px');
         $p3 = $request->file('200px')->store('public/photos/brand/200px');
@@ -32,11 +33,13 @@ class BrandController extends Controller
         $brand->description = $description;
         $brand->branches    = $branches;
         $brand->photo = json_encode([
-            '400px' => basename($p1),
-            '300px' => basename($p2),
-            '200px' => basename($p3),
-            '150px' => basename($p4)
+            'banner'    => basename($b1), 
+            '400px'     => basename($p1),
+            '300px'     => basename($p2),
+            '200px'     => basename($p3),
+            '150px'     => basename($p4)
         ]);
+        
         $brand->created_by = Auth::id(); 
 
         $brand->save();
