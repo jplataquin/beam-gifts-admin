@@ -66,10 +66,10 @@ class BrandController extends Controller
 
         $brand->photo = [
             'banner' => $brand->photo['400px'] ?? '',
-            '400px' => $brand->photo['400px'],
-            '300px' => $brand->photo['300px'],
-            '200px' => $brand->photo['200px'],
-            '150px' => $brand->photo['150px'],
+            '400px' => $brand->photo['400px'] ?? '',
+            '300px' => $brand->photo['300px'] ?? '',
+            '200px' => $brand->photo['200px'] ?? '',
+            '150px' => $brand->photo['150px'] ?? '',
         ];
 
         return view('brand/display',$brand);
