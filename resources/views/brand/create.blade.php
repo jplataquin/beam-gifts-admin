@@ -58,7 +58,7 @@
         <div class="form-group mb-3">
             <label>Banner</label>
             <div>
-                <img id="bannerPreview" class="img-thumbnail" style="max-height:400px;max-width:1200px;min-height:400px;min-width:1200px"/>
+                <img id="bannerPreview" class="img-thumbnail" style="max-height:300px;max-width:900px;min-height:300px;min-width:900px"/>
             </div>
             <input type="file" id="banner" class="form-control"/>
         </div>

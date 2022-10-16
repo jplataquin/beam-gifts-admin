@@ -15,6 +15,8 @@ class BrandController extends Controller
 
     public function _create(Request $request){
         
+        //TODO VALIDATION
+        
         $name        = $request->input('name');
         $status      = $request->input('status');
         $description = $request->input('description');
