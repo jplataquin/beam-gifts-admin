@@ -65,7 +65,7 @@ class BrandController extends Controller
         $brand->branches = json_decode($brand->branches);
 
         $brand->photo = [
-            'banner'    => $brand->photo['400px'] ?? '',
+            'banner'    => $brand->photo['banner'] ?? '',
             '400px'     => $brand->photo['400px'] ?? '',
             '300px'     => $brand->photo['300px'] ?? '',
             '200px'     => $brand->photo['200px'] ?? '',
