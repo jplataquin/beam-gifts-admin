@@ -92,8 +92,10 @@
         const description       = document.querySelector('#description');
         const addBranchBtn      = document.querySelector('#addBranchBtn');
         const branchContainer   = document.querySelector('#branchContainer');
+        const banner            = document.querySelector('#banner');
         const editBtn           = document.querySelector('#editBtn');
-     
+
+        const bannerPreview = document.querySelector('#bannerPreview');
         const preview1      = document.querySelector('#preview1');
         const preview2      = document.querySelector('#preview2');
         const preview3      = document.querySelector('#preview3');
@@ -122,12 +124,15 @@
             });
 
             formData.append('branches',JSON.stringify(branches));
-       
+            
+            
+            let b1 = await util.imgToBlob(bannerPreview);
             let p1 = await util.imgToBlob(preview1);
             let p2 = await util.imgToBlob(preview2);
             let p3 = await util.imgToBlob(preview3);
             let p4 = await util.imgToBlob(preview4);
 
+            formData.append('banner',b1);
             formData.append('400px',p1);
             formData.append('300px',p2);
             formData.append('200px',p3);
@@ -207,6 +212,14 @@
                 preview2.src = src;
                 preview3.src = src;
                 preview4.src = src;
+            }
+        }
+
+                //Banner preview image
+        banner.onchange = (e)=>{
+            if(e.target.files.length > 0){
+                let src = URL.createObjectURL(e.target.files[0]);
+                bannerPreview.src = src;
             }
         }
 

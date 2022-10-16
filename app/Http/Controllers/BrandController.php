@@ -16,7 +16,7 @@ class BrandController extends Controller
     public function _create(Request $request){
         
         //TODO VALIDATION
-        
+
         $name        = $request->input('name');
         $status      = $request->input('status');
         $description = $request->input('description');
@@ -149,11 +149,13 @@ class BrandController extends Controller
             }
         }
 
-        $d1 = $photos['400px'] ?? '';
-        $d2 = $photos['300px'] ?? '';
-        $d3 = $photos['200px'] ?? '';
-        $d4 = $photos['150px'] ?? '';
+        $dbanner = $photo['banner'] ?? '';
+        $d1      = $photos['400px'] ?? '';
+        $d2      = $photos['300px'] ?? '';
+        $d3      = $photos['200px'] ?? '';
+        $d4      = $photos['150px'] ?? '';
         
+        $b1 = $request->file('banner')->store('public/photos/brand/banner');
         $p1 = $request->file('400px')->store('public/photos/brand/400px');
         $p2 = $request->file('300px')->store('public/photos/brand/300px');
         $p3 = $request->file('200px')->store('public/photos/brand/200px');
@@ -164,16 +166,18 @@ class BrandController extends Controller
         $brand->description  = $description;
         $brand->branches     = json_encode($branches);
         $brand->photo        = json_encode([
-            '400px' => basename($p1),
-            '300px' => basename($p2),
-            '200px' => basename($p3),
-            '150px' => basename($p4)
+            'banner' => basename($b1), 
+            '400px'  => basename($p1),
+            '300px'  => basename($p2),
+            '200px'  => basename($p3),
+            '150px'  => basename($p4)
         ]);
 
         $brand->modified_by = Auth::id(); 
 
         $brand->save();
 
+        Storage::disk('public')->delete('/photos/brand/banner/'.$dbanner);
         Storage::disk('public')->delete('/photos/brand/400px/'.$d1);
         Storage::disk('public')->delete('/photos/brand/300px/'.$d2);
         Storage::disk('public')->delete('/photos/brand/200px/'.$d3);
