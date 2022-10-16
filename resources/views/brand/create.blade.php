@@ -56,7 +56,15 @@
      
 
         <div class="form-group mb-3">
-            <label>Photo</label>
+            <label>Banner</label>
+            <div>
+                <img id="bannerPreview" class="img-thumbnail" style="max-height:400px;max-width:1200px;min-height:400px;min-width:1200px"/>
+            </div>
+            <input type="file" id="banner" class="form-control"/>
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Logo</label>
             <div>
                 <img id="preview1" class="img-thumbnail" style="max-height:400px;max-width:400px;min-height:400px;min-width:400px"/>
                 <img id="preview2" class="img-thumbnail" style="max-height:300px;max-width:300px;min-height:300px;min-width:300px"/>
@@ -79,11 +87,13 @@
         const description       = document.querySelector('#description');
         const addBranchBtn      = document.querySelector('#addBranchBtn');
         const branchContainer   = document.querySelector('#branchContainer');
-     
+        const banner            = document.querySelector('#banner');
+
         const preview1      = document.querySelector('#preview1');
         const preview2      = document.querySelector('#preview2');
         const preview3      = document.querySelector('#preview3');
         const preview4      = document.querySelector('#preview4');
+        const bannerPreview = document.querySelector('#bannerPreview');
         const createBtn     = document.querySelector('#createBtn');
 
         
@@ -175,6 +185,17 @@
                 preview4.src = src;
             }
         }
+
+
+        
+        //Banner preview image
+        banner.onchange = (e)=>{
+            if(e.target.files.length > 0){
+                let src = URL.createObjectURL(e.target.files[0]);
+                bannerPreview.src = src;
+            }
+        }
+
 
         createBtn.onclick = (e)=>{
             e.preventDefault();
