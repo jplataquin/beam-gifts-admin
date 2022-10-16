@@ -57,9 +57,16 @@
             @endforeach
         </div>
      
+        <div class="form-group mb-3">
+            <label>Banner</label>
+            <div>
+                <img id="bannerPreview" class="img-thumbnail"  src="{{asset('storage/photos/brand/banner/'.$photo['banner'])}}" style="max-height:300px;max-width:900px;min-height:300px;min-width:900px"/>
+            </div>
+            <input type="file" id="banner" class="form-control d-none"/>
+        </div>
 
         <div class="form-group mb-3">
-            <label>Photo</label>
+            <label>Logo</label>
             <div>
                 <img id="preview1" class="img-thumbnail" src="{{asset('storage/photos/brand/400px/'.$photo['400px'])}}" style="max-height:400px;max-width:400px;min-height:400px;min-width:400px"/>
                 <img id="preview2" class="img-thumbnail" src="{{asset('storage/photos/brand/300px/'.$photo['300px'])}}" style="max-height:300px;max-width:300px;min-height:300px;min-width:300px"/>
