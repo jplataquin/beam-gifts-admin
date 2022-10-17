@@ -17,6 +17,16 @@
                 <option value="HDEN" @if ($status == 'HDEN') selected="selected" @endif>Hidden</option>
             </select>
         </div>
+
+        <div class="form-group mb-3">
+            <label>Category</label>
+            <select id="category" class="form-control" disabled="true">
+                @foreach(config('brand_categories')['options'] as $i=>$txt)
+                    <option value="{{$i}}" @if ($category == $i) selected="selected" @endif>{{$txt}}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="form-group mb-3">
             <label>Description</label>
             <textarea class="form-control" id="description" disabled="true">{{$description}}</textarea>

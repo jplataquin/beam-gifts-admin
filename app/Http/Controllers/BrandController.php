@@ -21,6 +21,7 @@ class BrandController extends Controller
         $status      = $request->input('status');
         $description = $request->input('description');
         $branches    = $request->input('branches');
+        $category    = $request->input('category');
 
         $b1 = $request->file('banner')->store('public/photos/brand/banner');
         $p1 = $request->file('400px')->store('public/photos/brand/400px');
@@ -32,6 +33,7 @@ class BrandController extends Controller
 
         $brand->name        = $name;
         $brand->status      = $status;
+        $brand->category    = $category;
         $brand->description = $description;
         $brand->branches    = $branches;
         $brand->photo = json_encode([

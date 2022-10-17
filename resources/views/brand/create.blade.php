@@ -17,6 +17,16 @@
                 <option value="HDEN">Hidden</option>
             </select>
         </div>
+
+        <div class="form-group mb-3">
+            <label>Category</label>
+            <select id="category" class="form-control">
+                @foreach(config('brand_categories')['options'] as $i=>$txt)
+                    <option value="{{$i}}">{{$txt}}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="form-group mb-3">
             <label>Description</label>
             <textarea class="form-control" id="description"></textarea>
@@ -88,6 +98,7 @@
         const addBranchBtn      = document.querySelector('#addBranchBtn');
         const branchContainer   = document.querySelector('#branchContainer');
         const banner            = document.querySelector('#banner');
+        const category          = document.querySelector('#category');
 
         const preview1      = document.querySelector('#preview1');
         const preview2      = document.querySelector('#preview2');
@@ -103,6 +114,7 @@
 
             formData.append('name',name.value);
             formData.append('status',status.value);
+            formData.append('category',category.value);
             formData.append('description',description.value);
             
             let branches = [];
