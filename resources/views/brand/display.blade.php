@@ -103,6 +103,7 @@
         const addBranchBtn      = document.querySelector('#addBranchBtn');
         const branchContainer   = document.querySelector('#branchContainer');
         const banner            = document.querySelector('#banner');
+        const category          = document.querySelector('#category');
         const editBtn           = document.querySelector('#editBtn');
 
         const bannerPreview = document.querySelector('#bannerPreview');
@@ -119,6 +120,7 @@
 
             formData.append('name',name.value);
             formData.append('status',status.value);
+            formData.append('category',category.value);
             formData.append('description',description.value);
             
             let branches = [];
