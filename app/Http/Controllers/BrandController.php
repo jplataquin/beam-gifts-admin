@@ -148,6 +148,7 @@ class BrandController extends Controller
         $status         = $request->input('status');
         $description    = $request->input('description');
         $branches       = $request->input('branches');
+        $category       = $request->input('category');
         
         $photos     = json_decode($brand->photo,true);
         $branches   = json_decode($branches);
@@ -174,6 +175,7 @@ class BrandController extends Controller
         $brand->name         = $name;
         $brand->status       = $status;
         $brand->description  = $description;
+        $brand->category     = $category;
         $brand->branches     = json_encode($branches);
         $brand->photo        = json_encode([
             'banner' => basename($b1), 
