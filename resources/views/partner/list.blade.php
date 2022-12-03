@@ -23,7 +23,7 @@
             let page    = 0;
             let loading = false;
             
-            async function list() {
+            async function showList() {
             
                 let result = await fetch('/api/partners').then((response) => {
                     return response.json();
@@ -35,7 +35,7 @@
                     }
 
                     console.log(reply.data);
-                    
+
                     reply.data.map(row=>{
                         
 
@@ -50,7 +50,7 @@
             }
 
 
-            list();
+            showList();
 
 
                
