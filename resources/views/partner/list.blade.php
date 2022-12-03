@@ -6,7 +6,7 @@
     <hr>
     
    
-    <div class="p-3 d-flex justify-content-around flex-wrap" id="list"></div>
+    <div class="p-3" id="list"></div>
     <div class="row">
         <div class="col">    
             <button id="showmore" class="btn btn-primary btn-block w-100 d-none">Show More</button>
