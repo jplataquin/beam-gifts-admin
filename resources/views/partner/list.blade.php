@@ -34,9 +34,13 @@
                         return {};
                     }
 
+                    console.log(reply.data);
                     
                     reply.data.map(row=>{
-                        data[item.id] = item;
+                        
+
+
+
                     });
 
                 });
