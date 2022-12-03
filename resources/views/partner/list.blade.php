@@ -28,7 +28,8 @@
                 let result = await fetch('/api/partners',{
                     headers: {
                         "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content,
-                        "Accept": "application/json"
+                        "Accept": "application/json",
+                        'X-Requested-With': 'XMLHttpRequest'
                     }
                 }).then((response) => {
                     return response.json();
