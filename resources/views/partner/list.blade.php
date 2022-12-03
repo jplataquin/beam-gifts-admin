@@ -37,22 +37,36 @@
 
                     reply.data.map(row=>{
                         
-                        let item = t.div({class:'mb-3'},()=>{
-                            t.div({class:'row'},()=>{
-                                t.div({class:'col-12'},()=>{
-                                    t.h5(row.brand.name);
-                                });
+                        let item = t.div({class:'card'},()=>{
+                            t.div({class:'card-header'},()=>{
+                               t.txt(row.brand.name);
+                                
                             });
 
-                            t.div({class:'row'},()=>{
-                                t.div({class:'col-6'},()=>{
-                                    t.txt(row.email);
-                                });
+                            t.div({class:'card-body'},()=>{
 
-                                t.div({class:'col-6'},()=>{
-                                    t.txt(row.status);
+                                t.div({class:'row'},()=>{
+                                    t.div({class:'col-6'},()=>{
+                                        t.txt(row.email);
+                                    });
+
+                                    t.div({class:'col-6'},()=>{
+                                        t.txt(row.status);
+                                    });
+                                });
+                                t.div({class:'row'},()=>{
+                                    t.div({class:'col-6'},()=>{
+                                        t.txt(row.primary_contact_person);
+                                        t.br();
+                                        t.txt(row.primary_contact_position);
+                                    });
+
+                                    t.div({class:'col-6'},()=>{
+                                        t.txt(row.rimary_contact_np);
+                                    });
                                 });
                             });
+                            
                         });
 
 
