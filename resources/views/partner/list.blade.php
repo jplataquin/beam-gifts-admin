@@ -55,7 +55,7 @@
                                     });
                                 });
                                 t.div({class:'row'},()=>{
-                                    t.div({class:'col-6'},()=>{
+                                    t.div({class:'col-md-6'},()=>{
                                         t.strong('Name: ');
                                         t.txt(row.primary_contact_person);
                                         t.br();
@@ -63,7 +63,7 @@
                                         t.txt(row.primary_contact_person_position);
                                     });
 
-                                    t.div({class:'col-6'},()=>{
+                                    t.div({class:'col-md-6'},()=>{
                                         t.strong('Phone: ');
                                         t.txt(row.primary_contact_no);
                                     });
