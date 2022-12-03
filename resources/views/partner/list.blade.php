@@ -56,7 +56,7 @@
                                 });
                                 t.div({class:'row'},()=>{
                                     t.div({class:'col-6'},()=>{
-                                        t.strong('Name: ')
+                                        t.strong('Name: ');
                                         t.txt('row.primary_contact_person);
                                         t.br();
                                         t.strong('Position: ');
