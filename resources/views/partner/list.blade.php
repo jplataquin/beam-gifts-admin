@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h1 id="title">Partners</h1>
+    <hr>
     
    
     <div class="p-3 d-flex justify-content-around flex-wrap" id="list"></div>
@@ -36,7 +37,23 @@
 
                     reply.data.map(row=>{
                         
+                        t.div({class:'mb-3'},()=>{
+                            t.div({class:'row'},()=>{
+                                t.div({class:'col-12'},()=>{
+                                    t.h5(row.username);
+                                });
+                            });
 
+                            t.div({class:'row'},()=>{
+                                t.div({class:'col-6'},()=>{
+                                    t.txt(row.email);
+                                });
+
+                                t.div({class:'col-6'},()=>{
+                                    t.txt(row.status);
+                                });
+                            });
+                        })
 
 
                     });
