@@ -65,6 +65,12 @@
                                         t.txt(row.primary_contact_no);
                                     });
                                 });
+
+                                t.div({class:'row'},()=>{
+                                    t.div({class:'col-12 text-end'},()=>{
+                                        t.a({class:'btn btn-primary',href:'/partner/'+row.id},'View');
+                                    });
+                                });
                             });
                             
                         });
