@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Partner;
+use App\Models\Brand;
 use Illuminate\Support\Facades\Auth;
 
 class PartnerController extends Controller
@@ -89,6 +90,10 @@ class PartnerController extends Controller
 
         $result = $partner->get();
         
+        foreach($result as $i => $key){
+            $result[$i]['brand'] = Brand::find($key->brand_id);
+        }
+
         return response()->json([
             'status' => 1,
             'message'=>'',
