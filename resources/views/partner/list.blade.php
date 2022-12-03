@@ -29,9 +29,7 @@
                     headers: {
                         "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content,
                         "Accept": "application/json"
-                    },
-                   // body: formData  ?? {},
-                    method: "POST"
+                    }
                 }).then((response) => {
                     return response.json();
                 }).then( (reply) =>{
