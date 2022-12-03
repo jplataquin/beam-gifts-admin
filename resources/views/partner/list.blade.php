@@ -58,11 +58,11 @@
                                     t.div({class:'col-6'},()=>{
                                         t.txt(row.primary_contact_person);
                                         t.br();
-                                        t.txt(row.primary_contact_position);
+                                        t.txt(row.primary_contact_person_position);
                                     });
 
                                     t.div({class:'col-6'},()=>{
-                                        t.txt(row.rimary_contact_np);
+                                        t.txt(row.primary_contact_no);
                                     });
                                 });
                             });
