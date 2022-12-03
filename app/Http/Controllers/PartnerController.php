@@ -60,4 +60,39 @@ class PartnerController extends Controller
             ]
         ]);
     }
+
+
+    public function list(){
+        return view('partner/list',[]);
+    }
+
+    public function _list(Request $request){
+        
+        $query = $request->input('query') ?? '';
+        $page  = (int) $request->input('page') ?? 0;
+        $limit = (int) $request->Input('limit') ?? 0;
+
+        $partner = new Partner();
+
+        if($query){
+            $partner = $partner->where('name','LIKE','%'.$query.'%');
+        }
+        
+        if($limit > 0){
+            
+            $page    = $page * $limit;
+            $partner = $partner->skip($page)->take($limit)->orderBy('created_at', 'desc');
+            
+        }else{
+            $partner = $partner->orderBy('created_at', 'desc');
+        }
+
+        $result = $partner->get();
+        
+        return response()->json([
+            'status' => 1,
+            'message'=>'',
+            'data'=> $result
+        ]);
+    }
 }

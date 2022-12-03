@@ -18,6 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware(['auth:sanctum'])->group(function(){
+
+    Route::get('partners',[App\Http\Controllers\PartnerController::class, '_list']);
+
+});
+
 
 Route::get('items',[App\Http\Controllers\ItemController::class, '_list']);
 Route::get('brands',[App\Http\Controllers\BrandController::class, '_list']);

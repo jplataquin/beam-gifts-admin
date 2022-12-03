@@ -75,7 +75,7 @@
         </div>
     </div>
     <script type="module">
-        import {Template,appendEl} from '/adarna.js';
+        import {Template,$el} from '/adarna.js';
         (async ()=>{
             const list      = document.querySelector('#list');
             const search    = document.querySelector('#search');
@@ -193,7 +193,7 @@
 
                     });
 
-                    appendEl(entry).to(list);
+                    $el.append(entry).to(list);
 
                 });
 
