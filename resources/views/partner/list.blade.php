@@ -40,7 +40,7 @@
                         let item = t.div({class:'mb-3'},()=>{
                             t.div({class:'row'},()=>{
                                 t.div({class:'col-12'},()=>{
-                                    t.h5(row.username);
+                                    t.h5(row.name);
                                 });
                             });
 
