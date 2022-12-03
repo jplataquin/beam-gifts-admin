@@ -25,15 +25,7 @@
             
             async function showList() {
             
-                let result = await fetch('/api/partners',{
-                    headers: {
-                        "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content,
-                        "Accept": "application/json",
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                }).then((response) => {
-                    return response.json();
-                }).then( (reply) =>{
+                window.util.$get('/api/partners').then( (reply) =>{
                     
                     if(!reply.status){
                         alert(reply.message);
