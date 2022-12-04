@@ -3,6 +3,18 @@
 @section('content')
 <div class="container">
     <h1 id="title">Partners</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Search</label>
+                <input type="text" class="form-control" id="query"/>
+            </div>
+        </div>
+
+        <div class="col-md-6 text-end">
+            <button id="createBtn" class="btn btn-primary">Create</button>
+        </div>
+    </div>
     <hr>
     
    
@@ -16,7 +28,8 @@
         import {Template,$el,$q} from '/adarna.js';
         (async ()=>{
             const list      = $q('#list').first();
-            const search    = $q('#search').first();
+            const query     = $q('#query').first();
+            const createBtn = $q('#createBtn').first();    
             const showmore  = $q('#showmore').first();
             
             const t         = new Template();
@@ -39,7 +52,7 @@
                         
                         let item = t.div({class:'card'},()=>{
                             t.div({class:'card-header'},()=>{
-                               t.txt(row.brand.name);
+                               t.txt(row.name+' - '+row.brand.name);
                                 
                             });
 
@@ -92,7 +105,10 @@
 
             showList();
 
-
+            createBtn.onclick = (e)=>{
+                e.preventDefault();
+                document.location.href = '/partner/create';
+            }
                
         })();
     </script>
