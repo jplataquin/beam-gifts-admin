@@ -102,8 +102,11 @@ class PartnerController extends Controller
 
         $partner = Partner::findOrFail($id);
 
+        $brands = Brands::all();
+
         return view('partner/display',[
-            'partner' => $partner
+            'partner' => $partner,
+            'brands'  => $brands
         ]);
     }
 }
