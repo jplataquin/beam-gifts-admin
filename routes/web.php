@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/partner/create',[App\Http\Controllers\PartnerController::class,'create']);
     Route::post('/partner/create',[App\Http\Controllers\PartnerController::class,'_create']);
     Route::get('/partners',[App\Http\Controllers\PartnerController::class,'list']);
-    Route::post('/partner/{id}',[App\Http\Controllers\PartnerController::class,'display']);
+    Route::get('/partner/{id}',[App\Http\Controllers\PartnerController::class,'display']);
     
 });
 

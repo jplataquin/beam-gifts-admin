@@ -136,7 +136,7 @@
             return false;
         }
 
-        window.util.$post('/partner/{{$partner->id}}',{
+        window.util.$post('/api/partner/{{$partner->id}}',{
             name        : name.value,
             brand_id    : brand.value,
             email       : email.value,
