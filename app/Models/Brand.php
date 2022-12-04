@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Brand extends Model
 {
-    public $table = 'brands';
+    protected $connection   = 'mysql';
+    protected $table = 'brands';
     use HasFactory;
 }
