@@ -70,11 +70,17 @@ window.util.$get = async (url,data) => {
     });
 }
 
-window.util.$post = async (url,formData,headers) => {
+window.util.$post = async (url,params,headers) => {
 
     headers                 = headers ?? {};
     headers['X-CSRF-Token'] =  document.querySelector('meta[name="csrf-token"]').content
     
+    let formData = new FormData();
+
+    for(let key in params){
+        formData.append(key,params[key]);
+    }
+
     return fetch(url,
     {
         headers: headers,

@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware(['auth:sanctum'])->group(function(){
 
     Route::get('/partners',[App\Http\Controllers\PartnerController::class, '_list']);
-
+    Route::post('/partner/{id}',[App\Http\Controllers\PartnerController::class,'_update']);
 });
 
 

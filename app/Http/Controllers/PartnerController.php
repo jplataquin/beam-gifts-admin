@@ -104,10 +104,61 @@ class PartnerController extends Controller
 
         $brands = Brand::all();
 
-        
+
         return view('partner/display',[
             'partner' => $partner,
             'brands'  => $brands
+        ]);
+    }
+
+    public function _update(Request $request,$id){
+
+        $partner = Partner::find($id);
+
+        if(!$partner){
+            return response()->json([
+                'status' => 0,
+                'message'=>'Record not found',
+                'data'=> []
+            ]);
+        }
+
+        $email      = $request->input('email');
+        $brand_id   = $request->input('brand_id');
+        $branch     = $request->input('branch');
+        $status     = $request->input('status');
+        $name       = $request->input('name');
+
+        $primary_contact_person = $request->input('primary_contact_person');
+        $primary_contact_no = $request->input('primary_contact_no');
+        $primary_contact_person_position = $request->input('primary_contact_person_position');
+
+        $secondary_contact_person = $request->input('secondary_contact_person');
+        $secondary_contact_no = $request->input('secondary_contact_no');
+        $secondary_contact_person_position = $request->input('secondary_contact_person_position');
+        
+        $partner->name      = $name;
+        $partner->email     = $email;
+        $partner->brand_id  = $brand_id;
+        $partner->branch    = $branch;
+        $partner->status    = $status;
+
+        $partner->primary_contact_person            = $primary_contact_person;
+        $partner->primary_contact_no                = $primary_contact_no;
+        $partner->primary_contact_person_position   = $primary_contact_person_position;
+
+        $partner->secondary_contact_person            = $secondary_contact_person;
+        $partner->secondary_contact_no                = $secondary_contact_no;
+        $partner->secondary_contact_person_position   = $secondary_contact_person_position;
+
+        $partner->save();
+
+        return response()->json([
+            'status' => 1,
+            'message'=>'',
+            'data'=> [
+                'id' => $partner->id
+            ]
         ]);
     }
 }
