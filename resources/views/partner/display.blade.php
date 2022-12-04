@@ -14,9 +14,9 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Brand</label>
-                <select>
+                <select class="form-control" id="brand">
                     @foreach($brands as $brand)
-                    <option value="{{$brand->id}}">{{$brand->name}}</option>
+                    <option value="{{$brand->id}}" @if($brand->id == $partner->brand->id) selected="true" @endif>{{$brand->name}}</option>
                     @endforeach
                 </select>
             </div>
