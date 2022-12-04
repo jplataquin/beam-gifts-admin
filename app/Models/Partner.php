@@ -53,4 +53,9 @@ class Partner extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function brand(){
+        return $this->hasOne('App\Models\Brand','id','brand_id');
+    }
 }

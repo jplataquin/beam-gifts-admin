@@ -89,15 +89,22 @@ class PartnerController extends Controller
         }
 
         $result = $partner->get();
-        
+        /*
         foreach($result as $i => $key){
             $result[$i]['brand'] = Brand::find($key->brand_id);
-        }
+        }*/
 
         return response()->json([
             'status' => 1,
             'message'=>'',
             'data'=> $result
         ]);
+    }
+
+    public function display($id){
+
+        $partner = Partner::findOrFail($id);
+
+        $partner->brand = Brand::findOrFail($partner->brand)
     }
 }
