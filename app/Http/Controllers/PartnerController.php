@@ -88,7 +88,7 @@ class PartnerController extends Controller
             $partner = $partner->orderBy('created_at', 'desc');
         }
 
-        $result = $partner->get();
+        $result = $partner->with('brand')->get();
         
         
         return response()->json([
