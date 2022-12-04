@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" class="form-control" id="name" value="{{$partner->name}}" disabled="true"/>
+                <input type="text" class="form-control" id="name" value="{{$partner->name}}" />
             </div>
         </div>
         <div class="col-md-6">
@@ -157,8 +157,14 @@
                 return false;
             }
 
-            document.location.reload();
+            document.location.href = '/partner/'+reply.data.id;
         });
+    }
+
+
+    cancelBtn.onclick = (e)=>{
+        e.preventDefault();
+        document.location.href = '/partners';
     }
     
 </script>
