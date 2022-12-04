@@ -104,6 +104,7 @@ class PartnerController extends Controller
 
         $brands = Brand::all();
 
+        
         return view('partner/display',[
             'partner' => $partner,
             'brands'  => $brands
