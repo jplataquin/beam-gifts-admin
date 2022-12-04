@@ -49,5 +49,57 @@
     </div>
 
 
+    <h3>Primary</h3>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Contact No.</label>
+                <input type="text" id="primary_contact_no" value="{{$partner->primary_contact_no}}" class="form-control"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Contact Person</label>
+                <input type="text" id="primary_contact_person" class="form-control" value="{{$partner->primary_contact_person}}"/>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <div class="form-group">
+                <label>Contact Person Position</label>
+                <input type="text" value="{{$partner->primary_contact_person_position}}" id="primary_contact_person_position" class="form-control"/>
+            </div>
+        </div>
+    </div>
+    
+    <h3>Secondary</h3>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Contact No.</label>
+                <input type="text" id="secondary_contact_no" value="{{$partner->secondary_contact_no}}" class="form-control"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Contact Person</label>
+                <input type="text" id="secondary_contact_person" class="form-control" value="{{$partner->secondary_contact_person}}"/>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <div class="form-group">
+                <label>Contact Person Position</label>
+                <input type="text" value="{{$partner->secondary_contact_person_position}}" id="secondary_contact_person_position" class="form-control"/>
+            </div>
+        </div>
+    </div>
+
 </div>
 @endsection
